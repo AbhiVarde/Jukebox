@@ -23,7 +23,7 @@ const Login = () => {
         <h1 className="flex items-center justify-center text-3xl text-center font-bold text-gray-800">
           <FontAwesomeIcon
             icon={faHeadphones}
-            className="mr-3 text-indigo-500"
+            className="mr-3 text-indigo-500 "
             bounce
           />
           SpotiFy Lite
