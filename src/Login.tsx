@@ -7,12 +7,14 @@ import {
 const Login = () => {
   const handleLogin = () => {
     const client_id = "5ebfa18c14a54b56bc3a400b92d8d15b";
-    const redirect_uri = "https://spoti-fy-lite.vercel.app/callback";
     const scope = "user-read-private user-read-email";
+    const redirect_uri = encodeURIComponent(
+      "https://spoti-fy-lite.vercel.app/callback"
+    );
 
-    window.location.href = `https://accounts.spotify.com/authorize?client_id=${client_id}&redirect_uri=${encodeURIComponent(
-      redirect_uri
-    )}&scope=${encodeURIComponent(scope)}&response_type=code`;
+    window.location.href = `https://accounts.spotify.com/authorize?client_id=${client_id}&redirect_uri=${redirect_uri}&scope=${encodeURIComponent(
+      scope
+    )}&response_type=code`;
   };
 
   return (
@@ -21,7 +23,7 @@ const Login = () => {
         <h1 className="flex items-center justify-center text-3xl text-center font-bold text-gray-800">
           <FontAwesomeIcon
             icon={faHeadphones}
-            className="mr-3 text-indigo-500 "
+            className="mr-3 text-indigo-500"
             bounce
           />
           SpotiFy Lite

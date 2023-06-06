@@ -48,7 +48,7 @@ const Callback = () => {
     };
 
     handleCallback();
-  }, []);
+  }, [location, navigate]);
 
   return (
     <div className="flex flex-col items-center justify-center h-screen bg-slate-100">
