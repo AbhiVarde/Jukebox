@@ -1,2 +1,2 @@
-# MusicPulse
-Unleash your music journey with MusicPulse
+# SpotiFy-Lite
+Unleash your music journey with SpotiFy-Lite
