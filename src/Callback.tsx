@@ -10,9 +10,7 @@ const Callback = () => {
     const handleCallback = async () => {
       const searchParams = new URLSearchParams(location.search);
       const code = searchParams.get("code");
-      const redirect_uri = encodeURIComponent(
-        "https://spoti-fy-lite.vercel.app/callback"
-      );
+      const redirect_uri = encodeURIComponent("http://localhost:3000/callback");
       const client_id = "5ebfa18c14a54b56bc3a400b92d8d15b";
       const client_secret = "c12e735302d54e1c98c3e52e6f64ecb9";
 
