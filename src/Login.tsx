@@ -6,8 +6,8 @@ import {
 
 const Login = () => {
   const handleLogin = () => {
-    const client_id = "7ef29f13b5de44cc98e618be7588ec41";
-    const redirect_uri = "http://localhost:3000/callback";
+    const client_id = "5ebfa18c14a54b56bc3a400b92d8d15b";
+    const redirect_uri = "https://spoti-fy-lite.vercel.app/callback";
     const scope = "user-read-private user-read-email";
 
     window.location.href = `https://accounts.spotify.com/authorize?client_id=${client_id}&redirect_uri=${encodeURIComponent(
