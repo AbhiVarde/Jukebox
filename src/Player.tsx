@@ -246,7 +246,7 @@ const Player = () => {
                       ? audioRef.current?.play()
                       : audioRef.current?.pause()
                   }
-                  className="flex items-center justify-center w-10 h-10 sm:w-14 sm:h-8 text-white bg-indigo-500 rounded-md hover:bg-indigo-600 focus:outline-none px-2 py-1 sm:px-4 sm:py-2"
+                  className="flex items-center justify-center w-16 h-10 sm:w-20 sm:h-8 text-white bg-indigo-500 rounded-md hover:bg-indigo-600 focus:outline-none px-2 py-1 sm:px-4 sm:py-2 transition duration-300 ease-in-out"
                 >
                   <FontAwesomeIcon
                     icon={audioRef.current?.paused ? faPlay : faPause}
@@ -256,7 +256,7 @@ const Player = () => {
                 </button>
                 <button
                   onClick={handleStop}
-                  className="flex items-center justify-center w-10 h-10 sm:w-14 sm:h-8 text-white bg-indigo-500 rounded-md hover:bg-indigo-600 focus:outline-none px-2 py-1 sm:px-4 sm:py-2"
+                  className="flex items-center justify-center w-16 h-10 sm:w-20 sm:h-8 text-white bg-indigo-500 rounded-md hover:bg-indigo-600 focus:outline-none px-2 py-1 sm:px-4 sm:py-2 transition duration-300 ease-in-out"
                 >
                   <FontAwesomeIcon icon={faStop} /> Stop
                 </button>
