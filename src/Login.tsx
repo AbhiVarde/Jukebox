@@ -17,7 +17,7 @@ const Login = () => {
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-slate-100">
-      <div className="max-w-md mx-2 sm:mx-0 w-full p-6 bg-white shadow-lg rounded-lg">
+      <div className="max-w-md mx-5 sm:mx-0 w-full p-6 bg-white shadow-lg rounded-lg">
         <h1 className="flex items-center justify-center text-3xl text-center font-bold text-gray-800">
           <FontAwesomeIcon
             icon={faHeadphones}
