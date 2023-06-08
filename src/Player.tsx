@@ -226,11 +226,11 @@ const Player = () => {
             <div className="flex flex-col items-center justify-center sm:justify-start ml-4">
               <div className="hidden sm:flex items-center ml-4 w-full sm:w-40 ">
                 <div
-                  className="flex-grow h-1.5 bg-gray-200 rounded-2xl"
+                  className="flex-grow h-2 bg-gray-200 rounded-2xl cursor-pointer"
                   onClick={handleProgressBarClick}
                 >
                   <div
-                    className="h-1.5 bg-indigo-500 rounded-2xl"
+                    className="h-2 bg-indigo-500 rounded-2xl"
                     style={{ width: `${songProgress}%` }}
                   />
                 </div>
@@ -246,18 +246,19 @@ const Player = () => {
                       ? audioRef.current?.play()
                       : audioRef.current?.pause()
                   }
-                  className="flex items-center justify-center w-10 h-10 sm:w-8 sm:h-8 text-white bg-indigo-500 rounded-full hover:bg-indigo-600 focus:outline-none"
+                  className="flex items-center justify-center w-10 h-10 sm:w-8 sm:h-8 text-white bg-indigo-500 rounded-md hover:bg-indigo-600 focus:outline-none"
                 >
                   <FontAwesomeIcon
                     icon={audioRef.current?.paused ? faPlay : faPause}
                     className="text-md"
                   />
+                  {audioRef.current?.paused ? "Play" : "Pause"}
                 </button>
                 <button
                   onClick={handleStop}
-                  className="flex items-center justify-center w-10 h-10 sm:w-8 sm:h-8 text-white bg-indigo-500 rounded-full hover:bg-indigo-600 focus:outline-none"
+                  className="flex items-center justify-center w-10 h-10 sm:w-8 sm:h-8 text-white bg-indigo-500 rounded-md hover:bg-indigo-600 focus:outline-none"
                 >
-                  <FontAwesomeIcon icon={faStop} />
+                  <FontAwesomeIcon icon={faStop} /> Stop
                 </button>
               </div>
             </div>
