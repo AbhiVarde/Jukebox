@@ -11,9 +11,7 @@ const Login = () => {
   const handleLogin = () => {
     const client_id = "aeb66ebb7dc140d8bda26cc47b2a195d";
     const scope = "user-read-private user-read-email";
-    const redirect_uri = encodeURIComponent(
-      process.env.REACT_APP_REDIRECT_URI!
-    );
+    const redirect_uri = "https://jukebox-xi.vercel.app/callback";
 
     window.location.href = `https://accounts.spotify.com/authorize?client_id=${client_id}&redirect_uri=${redirect_uri}&scope=${encodeURIComponent(
       scope

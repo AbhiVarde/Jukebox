@@ -13,9 +13,7 @@ const Callback = () => {
     const handleCallback = async () => {
       const searchParams = new URLSearchParams(location.search);
       const code = searchParams.get("code");
-      const redirect_uri =
-        process.env.REACT_APP_REDIRECT_URI ||
-        "https://jukebox-xi.vercel.app/callback";
+      const redirect_uri = "https://jukebox-xi.vercel.app/callback";
       const client_id = "aeb66ebb7dc140d8bda26cc47b2a195d";
       const client_secret = "1339a2cf989e471b8a746f72245f67a3";
 
