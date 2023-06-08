@@ -207,7 +207,7 @@ const Player = () => {
                     />
                   </div>
                   <div className="ml-4">
-                    <p className="text-lg text-gray-800 font-medium">
+                    <p className="text-sm sm:text-lg text-gray-800 font-medium">
                       {track.name}
                     </p>
                     <p className="text-xs text-gray-600">
