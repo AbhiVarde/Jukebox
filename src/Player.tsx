@@ -171,7 +171,7 @@ const Player = () => {
           </div>
         ) : (
           <div className="mt-8 text-center text-gray-600">
-            No search results found
+            No search results found.
           </div>
         )}
         <audio ref={audioRef} />
