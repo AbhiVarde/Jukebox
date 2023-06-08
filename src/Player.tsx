@@ -53,16 +53,11 @@ const Player = () => {
         : audioRef.current.pause();
     } else {
       setIsPlaying(true);
-      if (track.duration_ms !== 60000) {
-        alert(
-          "The selected track is longer than 60 seconds. Please select a different track."
-        );
-      } else {
-        audioRef.current.src = trackUrl;
-        audioRef.current.play();
-        setCurrentTrack(trackUrl);
-        setSelectedTrack(track);
-      }
+
+      audioRef.current.src = trackUrl;
+      audioRef.current.play();
+      setCurrentTrack(trackUrl);
+      setSelectedTrack(track);
     }
   };
 
