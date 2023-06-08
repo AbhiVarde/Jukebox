@@ -3,9 +3,6 @@ import {
   faHeadphones,
   faArrowRightToBracket,
 } from "@fortawesome/free-solid-svg-icons";
-import dotenv from "dotenv";
-
-dotenv.config();
 
 const Login = () => {
   const handleLogin = () => {

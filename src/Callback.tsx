@@ -1,9 +1,6 @@
 import { useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import axios from "axios";
-import dotenv from "dotenv";
-
-dotenv.config(); // Load environment variables from .env file
 
 const Callback = () => {
   const navigate = useNavigate();
