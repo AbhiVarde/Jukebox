@@ -207,7 +207,18 @@ const Player = () => {
             )}
           </div>
           {currentTrack && (
-            <div className="flex items-center justify-center sm:justify-start ml-4">
+            <div className="flex flex-col items-center justify-center sm:justify-start ml-4">
+              <div className="hidden sm:flex items-center ml-4 w-full sm:w-40 ">
+                <div className="flex-grow h-1.5 bg-gray-200 rounded-2xl">
+                  <div
+                    className=" h-1.5 bg-indigo-500 rounded-2xl"
+                    style={{ width: `${songProgress}%` }}
+                  />
+                </div>
+                <span className="ml-2 text-xs text-gray-600">
+                  {remainingTime}s
+                </span>
+              </div>
               <div className="flex items-center space-x-2">
                 <button
                   onClick={() =>
@@ -228,17 +239,6 @@ const Player = () => {
                 >
                   <FontAwesomeIcon icon={faStop} />
                 </button>
-              </div>
-              <div className="hidden sm:flex items-center ml-4 w-full sm:w-40 ">
-                <div className="flex-grow h-1.5 bg-gray-200 rounded-2xl">
-                  <div
-                    className=" h-1.5 bg-indigo-500 rounded-2xl"
-                    style={{ width: `${songProgress}%` }}
-                  />
-                </div>
-                <span className="ml-2 text-xs text-gray-600">
-                  {remainingTime}s
-                </span>
               </div>
             </div>
           )}

@@ -24,7 +24,7 @@ const Login = () => {
             className="mr-3 text-indigo-500 "
             bounce
           />
-          Jukebox
+          JukeBox
         </h1>
         <p className="text-center text-gray-600 mt-2">
           Unleash your music journey with JukeBox.
