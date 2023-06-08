@@ -16,6 +16,7 @@ const Player = () => {
   const [selectedTrack, setSelectedTrack] = useState<any>(null);
   const [songProgress, setSongProgress] = useState(0);
   const [remainingTime, setRemainingTime] = useState(30);
+  const [isPlaying, setIsPlaying] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const audioRef = useRef<HTMLAudioElement>(null);
 
@@ -46,10 +47,12 @@ const Player = () => {
     if (!audioRef.current) return;
 
     if (currentTrack === trackUrl) {
+      setIsPlaying(!isPlaying);
       audioRef.current.paused
         ? audioRef.current.play()
         : audioRef.current.pause();
     } else {
+      setIsPlaying(true);
       audioRef.current.src = trackUrl;
       audioRef.current.play();
       setCurrentTrack(trackUrl);
@@ -69,7 +72,7 @@ const Player = () => {
   const handleSongEnd = () => {
     setCurrentTrack("");
     setSongProgress(0);
-    setRemainingTime(30);
+    setRemainingTime(60);
     setSelectedTrack(null);
   };
 
@@ -79,13 +82,26 @@ const Player = () => {
     const currentTime = audioRef.current.currentTime;
     const duration = audioRef.current.duration;
     const progress = (currentTime / duration) * 100 || 0;
-    const remainingSeconds = Math.ceil(30 - currentTime);
+    const remainingSeconds = Math.ceil(60 - currentTime);
     setSongProgress(progress);
     setRemainingTime(remainingSeconds);
 
-    if (currentTime >= 30) {
+    if (currentTime >= 60) {
       handleStop();
     }
+  };
+
+  const handleProgressBarClick = (event: React.MouseEvent<HTMLDivElement>) => {
+    if (!audioRef.current) return;
+
+    const progressBar = event.currentTarget;
+    const rect = progressBar.getBoundingClientRect();
+    const offsetX = event.clientX - rect.left;
+    const percentage = offsetX / progressBar.clientWidth;
+    const duration = audioRef.current.duration;
+    const currentTime = duration * percentage;
+
+    audioRef.current.currentTime = currentTime;
   };
 
   useEffect(() => {
@@ -209,12 +225,16 @@ const Player = () => {
           {currentTrack && (
             <div className="flex flex-col items-center justify-center sm:justify-start ml-4">
               <div className="hidden sm:flex items-center ml-4 w-full sm:w-40 ">
-                <div className="flex-grow h-1.5 bg-gray-200 rounded-2xl">
+                <div
+                  className="flex-grow h-1.5 bg-gray-200 rounded-2xl"
+                  onClick={handleProgressBarClick}
+                >
                   <div
-                    className=" h-1.5 bg-indigo-500 rounded-2xl"
+                    className="h-1.5 bg-indigo-500 rounded-2xl"
                     style={{ width: `${songProgress}%` }}
                   />
                 </div>
+
                 <span className="ml-2 text-xs text-gray-600">
                   {remainingTime}s
                 </span>
