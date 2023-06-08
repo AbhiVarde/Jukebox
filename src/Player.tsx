@@ -250,7 +250,7 @@ const Player = () => {
                 >
                   <FontAwesomeIcon
                     icon={audioRef.current?.paused ? faPlay : faPause}
-                    className="text-md mr-1"
+                    className="text-md sm:mr-1"
                   />
                   <span className="hidden sm:inline">
                     {audioRef.current?.paused ? "Play" : "Pause"}
@@ -260,7 +260,7 @@ const Player = () => {
                   onClick={handleStop}
                   className="flex items-center justify-center w-10 h-10 sm:w-20 sm:h-8 text-white bg-red-500 rounded-md hover:bg-red-600 focus:outline-none px-2 py-1 sm:px-4 sm:py-2 transition duration-300 ease-in-out"
                 >
-                  <FontAwesomeIcon icon={faStop} className="text-md mr-1" />{" "}
+                  <FontAwesomeIcon icon={faStop} className="text-md sm:mr-1" />{" "}
                   <span className="hidden sm:inline">Stop</span>
                 </button>
               </div>
