@@ -1,6 +1,9 @@
 import { useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import axios from "axios";
+import dotenv from "dotenv";
+
+dotenv.config(); // Load environment variables from .env file
 
 const Callback = () => {
   const navigate = useNavigate();
@@ -10,7 +13,7 @@ const Callback = () => {
     const handleCallback = async () => {
       const searchParams = new URLSearchParams(location.search);
       const code = searchParams.get("code");
-      const redirect_uri = "https://jukebox-xi.vercel.app/callback";
+      const redirect_uri = process.env.REACT_APP_REDIRECT_URI;
       const client_id = "aeb66ebb7dc140d8bda26cc47b2a195d";
       const client_secret = "1339a2cf989e471b8a746f72245f67a3";
 
@@ -18,7 +21,7 @@ const Callback = () => {
         const requestData = new URLSearchParams();
         requestData.append("grant_type", "authorization_code");
         requestData.append("code", code);
-        requestData.append("redirect_uri", redirect_uri);
+        requestData.append("redirect_uri", redirect_uri!);
         requestData.append("client_id", client_id);
         requestData.append("client_secret", client_secret);
 

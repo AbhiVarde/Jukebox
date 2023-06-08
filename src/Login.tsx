@@ -3,13 +3,16 @@ import {
   faHeadphones,
   faArrowRightToBracket,
 } from "@fortawesome/free-solid-svg-icons";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const Login = () => {
   const handleLogin = () => {
     const client_id = "aeb66ebb7dc140d8bda26cc47b2a195d";
     const scope = "user-read-private user-read-email";
     const redirect_uri = encodeURIComponent(
-      "https://jukebox-xi.vercel.app/callback"
+      process.env.REACT_APP_REDIRECT_URI!
     );
 
     window.location.href = `https://accounts.spotify.com/authorize?client_id=${client_id}&redirect_uri=${redirect_uri}&scope=${encodeURIComponent(
