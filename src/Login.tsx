@@ -17,8 +17,8 @@ const Login = () => {
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-slate-100">
-      <div className="max-w-sm p-6 mx-5 bg-white shadow-lg rounded-lg">
-        <h1 className="flex items-center justify-center text-3xl text-center font-bold text-gray-800">
+      <div className="max-w-sm p-6 mx-4 bg-white shadow-lg rounded-lg">
+        <h1 className="flex items-center justify-center text-2xl sm:text-3xl text-center font-bold text-gray-800">
           <FontAwesomeIcon
             icon={faHeadphones}
             className="mr-3 text-indigo-500 "
@@ -26,11 +26,11 @@ const Login = () => {
           />
           JukeBox
         </h1>
-        <p className="text-center text-gray-600 mt-2">
+        <p className="text-center text-sm sm:text-base text-gray-600 mt-2">
           Unleash your music journey with JukeBox.
         </p>
         <button
-          className="w-full justify-center px-4 py-2 mt-6 text-white bg-indigo-500 rounded hover:bg-indigo-600 flex items-center"
+          className="w-full text-sm sm:text-base justify-center px-4 py-2 mt-6 text-white bg-indigo-500 rounded hover:bg-indigo-600 flex items-center"
           onClick={handleLogin}
         >
           Log in with Spotify{" "}
