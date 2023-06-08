@@ -16,13 +16,13 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-slate-100">
+    <div className="min-h-screen flex flex-col items-center justify-center bg-slate-100">
       <div className="max-w-md w-full p-6 bg-white shadow-lg rounded-lg">
         <h1 className="flex items-center justify-center text-3xl text-center font-bold text-gray-800">
           <FontAwesomeIcon
             icon={faHeadphones}
             className="mr-3 text-indigo-500 "
-            bounce
+            spin
           />
           JukeBox
         </h1>
@@ -40,7 +40,7 @@ const Login = () => {
           />
         </button>
       </div>
-      <footer className="mx-auto fixed bottom-0 text-gray-900 py-4">
+      <footer className="mx-auto fixed bottom-0 text-gray-900 py-4 text-sm">
         © 2023 AbhiVarde - Made with ❤️ for the people of the internet.
       </footer>
     </div>
