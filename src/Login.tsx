@@ -6,7 +6,7 @@ import {
 
 const Login = () => {
   const handleLogin = () => {
-    const client_id = "5ebfa18c14a54b56bc3a400b92d8d15b";
+    const client_id = "aeb66ebb7dc140d8bda26cc47b2a195d";
     const scope = "user-read-private user-read-email";
     const redirect_uri = encodeURIComponent("http://localhost:3000/callback");
 
@@ -24,10 +24,10 @@ const Login = () => {
             className="mr-3 text-indigo-500 "
             bounce
           />
-          SpotiFy Lite
+          Jukebox
         </h1>
         <p className="text-center text-gray-600 mt-2">
-          Unleash your music journey with SpotiFy Lite.
+          Unleash your music journey with JukeBox.
         </p>
         <button
           className="w-full justify-center px-4 py-2 mt-6 text-white bg-indigo-500 rounded hover:bg-indigo-600 flex items-center"

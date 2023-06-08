@@ -109,10 +109,10 @@ const Player = () => {
             className="w-6 h-6 mr-2 text-indigo-500"
             bounce
           />
-          MusicPulse
+          JukeBox
         </h1>
         <p className="text-gray-600 mt-2 text-center">
-          Discover and enjoy the latest music.
+          Discover, explore, and enjoy the latest music.
         </p>
         <div className="flex flex-col md:flex-row items-center justify-center mt-4">
           <div className="relative">

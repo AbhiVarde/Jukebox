@@ -10,9 +10,9 @@ const Callback = () => {
     const handleCallback = async () => {
       const searchParams = new URLSearchParams(location.search);
       const code = searchParams.get("code");
-      const redirect_uri = encodeURIComponent("http://localhost:3000/callback");
-      const client_id = "5ebfa18c14a54b56bc3a400b92d8d15b";
-      const client_secret = "c12e735302d54e1c98c3e52e6f64ecb9";
+      const redirect_uri = "http://localhost:3000/callback"; // Manually encode only the redirect_uri value
+      const client_id = "aeb66ebb7dc140d8bda26cc47b2a195d";
+      const client_secret = "1339a2cf989e471b8a746f72245f67a3";
 
       if (code) {
         const requestData = new URLSearchParams();
