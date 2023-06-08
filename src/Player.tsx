@@ -53,10 +53,16 @@ const Player = () => {
         : audioRef.current.pause();
     } else {
       setIsPlaying(true);
-      audioRef.current.src = trackUrl;
-      audioRef.current.play();
-      setCurrentTrack(trackUrl);
-      setSelectedTrack(track);
+      if (track.duration_ms > 60000) {
+        alert(
+          "The selected track is longer than 60 seconds. Please select a different track."
+        );
+      } else {
+        audioRef.current.src = trackUrl;
+        audioRef.current.play();
+        setCurrentTrack(trackUrl);
+        setSelectedTrack(track);
+      }
     }
   };
 
@@ -246,7 +252,7 @@ const Player = () => {
                       ? audioRef.current?.play()
                       : audioRef.current?.pause()
                   }
-                  className="flex items-center justify-center w-10 h-10 sm:w-14 sm:h-8 text-white bg-indigo-500 rounded-md hover:bg-indigo-600 focus:outline-none"
+                  className="flex items-center justify-center w-10 h-10 sm:w-14 sm:h-8 text-white bg-indigo-500 rounded-md hover:bg-indigo-600 focus:outline-none px-2 py-1 sm:px-4 sm:py-2"
                 >
                   <FontAwesomeIcon
                     icon={audioRef.current?.paused ? faPlay : faPause}
@@ -256,7 +262,7 @@ const Player = () => {
                 </button>
                 <button
                   onClick={handleStop}
-                  className="flex items-center justify-center w-10 h-10 sm:w-14 sm:h-8 text-white bg-indigo-500 rounded-md hover:bg-indigo-600 focus:outline-none"
+                  className="flex items-center justify-center w-10 h-10 sm:w-14 sm:h-8 text-white bg-indigo-500 rounded-md hover:bg-indigo-600 focus:outline-none px-2 py-1 sm:px-4 sm:py-2"
                 >
                   <FontAwesomeIcon icon={faStop} /> Stop
                 </button>

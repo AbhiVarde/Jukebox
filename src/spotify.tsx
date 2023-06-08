@@ -8,6 +8,7 @@ export async function searchTracks(searchTerm: string, accessToken: string) {
       params: {
         q: searchTerm,
         type: "track",
+        duration_ms: "60000",
       },
       headers: {
         Authorization: `Bearer ${accessToken}`,
@@ -16,14 +17,9 @@ export async function searchTracks(searchTerm: string, accessToken: string) {
 
     const { tracks } = response.data;
 
-    const playableTracks = tracks.items
-      .filter((track: any) => track.preview_url)
-      .map((track: any) => {
-        return {
-          ...track,
-          preview_url: `${track.preview_url}?duration_ms=60000`,
-        };
-      });
+    const playableTracks = tracks.items.filter(
+      (track: any) => track.preview_url
+    );
 
     return playableTracks;
   } catch (error) {
