@@ -8,7 +8,6 @@ export async function searchTracks(searchTerm: string, accessToken: string) {
       params: {
         q: searchTerm,
         type: "track",
-        duration_ms: "60000",
       },
       headers: {
         Authorization: `Bearer ${accessToken}`,

@@ -53,7 +53,6 @@ const Player = () => {
         : audioRef.current.pause();
     } else {
       setIsPlaying(true);
-
       audioRef.current.src = trackUrl;
       audioRef.current.play();
       setCurrentTrack(trackUrl);
@@ -73,7 +72,7 @@ const Player = () => {
   const handleSongEnd = () => {
     setCurrentTrack("");
     setSongProgress(0);
-    setRemainingTime(60);
+    setRemainingTime(30);
     setSelectedTrack(null);
   };
 
@@ -83,11 +82,11 @@ const Player = () => {
     const currentTime = audioRef.current.currentTime;
     const duration = audioRef.current.duration;
     const progress = (currentTime / duration) * 100 || 0;
-    const remainingSeconds = Math.ceil(60 - currentTime);
+    const remainingSeconds = Math.ceil(30 - currentTime);
     setSongProgress(progress);
     setRemainingTime(remainingSeconds);
 
-    if (currentTime >= 60) {
+    if (currentTime >= 30) {
       handleStop();
     }
   };
