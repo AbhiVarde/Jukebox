@@ -158,7 +158,7 @@ const Player = () => {
             {searchResults.map((track) => (
               <div
                 key={track.id}
-                className="py-4 px-4 mx-2 border rounded shadow-lg bg-white transform transition duration-500 hover:scale-105 hover:border-indigo-400 cursor-pointer"
+                className="py-4 px-4 mx-2 border rounded shadow-lg bg-white transform transition duration-400 hover:scale-110 hover:border-indigo-400 cursor-pointer"
                 onClick={() => handlePlay(track.preview_url, track)}
               >
                 <div className="flex justify-center mb-2">
