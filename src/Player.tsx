@@ -19,6 +19,7 @@ const Player = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const audioRef = useRef<HTMLAudioElement>(null);
+  const currentYear = new Date().getFullYear();
 
   const handleSearch = async () => {
     if (!searchTerm) return;
@@ -270,7 +271,7 @@ const Player = () => {
       )}
 
       <footer className="mx-4 text-xs sm:text-sm lex justify-center items-center text-center text-gray-900 py-4">
-        © 2023 AbhiVarde - Made with ❤️ for the people of the internet.
+        © {currentYear} AbhiVarde - Made with ❤️ for the people of the internet.
       </footer>
     </div>
   );
