@@ -40,8 +40,18 @@ const Login = () => {
           />
         </button>
       </div>
-      <footer className="mx-auto fixed bottom-0 text-gray-900 py-4 text-center text-xs sm:text-sm">
-        © 2023 AbhiVarde - Made with ❤️ for the people of the internet.
+      <footer
+        className="mx-auto fixed bottom-0 text-gray-6
+      00 py-4 text-center text-xs sm:text-sm"
+      >
+        &copy; {new Date().getFullYear()}, Designed & Build by{" "}
+        <a
+          href="https://abhivarde.vercel.app"
+          className=" text-black font-semibold"
+        >
+          AbhiVarde
+        </a>
+        .{" "}
       </footer>
     </div>
   );
