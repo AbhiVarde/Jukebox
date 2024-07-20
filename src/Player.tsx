@@ -272,7 +272,7 @@ const Player = () => {
       <footer className="mx-4 text-xs sm:text-sm lex justify-center items-center text-center text-gray-600 py-4">
         &copy; {new Date().getFullYear()}, Designed & Build by{" "}
         <a
-          href="https://abhivarde.vercel.app"
+          href="https://www.abhivarde.in/"
           className=" text-black font-semibold"
         >
           AbhiVarde
